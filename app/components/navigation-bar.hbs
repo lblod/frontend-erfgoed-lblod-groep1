@@ -1,0 +1,23 @@
+<AuToolbar @border="bottom" @skin="tint" class="au-c-navigation" as |Group|>
+  <Group>
+    <AuTabs @reversed={{this.reversed}} as |Tab|>
+      <Tab>
+        <AuLink @route="index" @icon="sitemap">
+          Route 1
+        </AuLink>
+      </Tab>
+      <Tab>
+        <AuLink @route="index" @icon="unordered-list">
+          Route 2
+        </AuLink>
+      </Tab>
+    </AuTabs>
+  </Group>
+  {{#if this.currentSession.canEdit}}
+    <Group>
+      <AuLink @route="index" @skin="button-secondary">
+        Secured route
+      </AuLink>
+    </Group>
+  {{/if}}
+</AuToolbar>
