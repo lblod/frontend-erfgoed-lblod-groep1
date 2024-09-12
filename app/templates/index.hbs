@@ -9,32 +9,32 @@
     <section class="c-home">
       <div class="au-o-flow">
         <AuContent>
-          <AuHeading @level="1" @skin="2">Welkom bij Hackathon!</AuHeading>
-        </AuContent>
-        <div class="au-c-home__form au-o-flow">
-          <div class="au-o-grid au-o-grid--small">
-            <div class="au-o-grid__item au-u-1-2@medium">
-              <img src="/assets/images/undraw_house_searching_re_stk8.svg" alt="oeps" />
+          <div class="au-c-home__form au-o-flow">
+            <div class="au-o-grid au-o-grid--small">
+              <div class="au-o-grid__item au-u-1-2@medium">
+                <img src="/assets/images/undraw_house_searching_re_stk8.svg" alt="oeps" />
+              </div>
+              <div class="au-o-grid__item au-u-1-2@medium">
+                <AuHeading @level="2" @skin="4">
+                  Somewhere people can request things :)
+                </AuHeading>
+                <p>
+                  This doesn’t need to be a separate platform, it can work via e-loket or mijn burgerprofiel... But for
+                  the sake of the hackathon it is currently done here!
+                </p>
+                <AuHeading @level="2" @skin="6">
+                  First, let’s check if your building in a cultural monument.
+                </AuHeading>
+                <form>
+                  <AuLabel for="address">Address</AuLabel>
+                  <AuInput id="address" />`
+                  <AuButton type="submit">Search</AuButton>
+                </form>
+              </div>
             </div>
-            <div class="au-o-grid__item au-u-1-2@medium">
-              <AuHeading @level="2" @skin="4">
-                Somewhere people can request things :)
-              </AuHeading>
-              <p>
-                This doesn’t need to be a separate platform, it can work via e-loket or mijn burgerprofiel... But for
-                the sake of the hackathon it is currently done here!
-              </p>
-              <AuHeading @level="2" @skin="6">
-                First, let’s check if your building in a cultural monument.
-              </AuHeading>
-              <form>
-              <AuLabel for="address">Address</AuLabel>
-              <AuInput id="address" />`
-              <AuButton type="submit">Search</AuButton>
-              </form>
-            </div>
+
           </div>
-        </div>
+        </AuContent>
       </div>
     </section>
   </AuBodyContainer>
