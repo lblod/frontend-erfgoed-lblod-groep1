@@ -27,8 +27,6 @@ export default class AddressRegisterSelectorComponent extends Component {
     this.selectedAddress = addressSuggestion;
 
     if (addressSuggestion) {
-      const addresses = yield this.addressRegister.findAll(addressSuggestion);
-
       // TODO: this should probably be fixed in the API itself (, if possible)
       // avoid duplicates, e.g Liebaardstnaat 10, 8792 Waregem
       this.args.onChange({
