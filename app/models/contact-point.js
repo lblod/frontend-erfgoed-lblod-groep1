@@ -1,21 +1,14 @@
-import Model, { attr } from '@ember-data/model';
-export const CONTACT_TYPE = {
-  PRIMARY: 'Primary',
-  SECONDARY: 'Secondary',
-};
+import Model, { attr, belongsTo } from '@ember-data/model';
 
 export default class ContactPointModel extends Model {
+  @attr uri;
+
   @attr email;
   @attr telephone;
-  @attr fax;
-  @attr website;
-  @attr type;
-}
 
-export function findPrimaryContact(contactList) {
-  return contactList?.findBy('type', CONTACT_TYPE.PRIMARY);
-}
-
-export function findSecondaryContact(contactList) {
-  return contactList?.findBy('type', CONTACT_TYPE.SECONDARY);
+  @belongsTo('adres', {
+    async: true,
+    inverse: null,
+  })
+  adres;
 }
