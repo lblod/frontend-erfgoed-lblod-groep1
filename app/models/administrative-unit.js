@@ -2,16 +2,16 @@ import Organization from './organization';
 
 import { attr, belongsTo, hasMany } from '@ember-data/model';
 
-export default class BestuurseenheidModel extends Organization {
+export default class AdministrativeUnitModel extends Organization {
   @attr uri;
 
   @attr naam;
 
-  @belongsTo('locatie', {
+  @belongsTo('location', {
     async: true,
     inverse: null,
   })
-  locatie;
+  location;
 
   @belongsTo('bestuurseenheid-classificatie-code', {
     async: true,

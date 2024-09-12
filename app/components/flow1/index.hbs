@@ -1,0 +1,68 @@
+<LayoutHome>
+
+  <AuContentHeader @titlePartOne="Vlaanderen" @titlePartTwo="is hackaton :)">
+    <img
+      sizes="50vw"
+      src="/assets/images/loket-header-1600.jpg"
+      srcset="/assets/images/loket-header-320.jpg 320w, /assets/images/loket-header-1024.jpg 1024w, /assets/images/loket-header-1600.jpg 1600w"
+      alt="Foto van een laptop met daarop het vlaanderen logo."
+    />
+  </AuContentHeader>
+  <AuBodyContainer class="au-u-background-gray-100">
+    <section class="c-home">
+      <div class="au-o-flow">
+        <AuContent>
+          <div class="au-c-home__form au-o-flow">
+            <div class="au-o-grid au-o-grid--small">
+              <div
+                class="au-o-grid__item au-u-1-2@medium au-u-flex au-u-flex--center"
+              >
+                <img
+                  src="/assets/images/undraw_house_searching_re_stk8.svg"
+                  alt=""
+                />
+              </div>
+              <div class="au-o-grid__item au-u-1-2@medium">
+                <AuHeading @level="2" @skin="4" class="au-u-margin-bottom">
+                  Somewhere people can request things :)
+                </AuHeading>
+                <p class="au-u-margin-bottom-large">
+                  This doesn’t need to be a separate platform, it can work via
+                  e-loket or mijn burgerprofiel... But for the sake of the
+                  hackathon it is currently done here!
+                </p>
+                <AuHeading @level="2" @skin="6">
+                  First, let’s check if your building in a cultural monument.
+                </AuHeading>
+                <div class="au-u-margin-top au-c-form">
+                  <AuLabel for="address">Address</AuLabel>
+                  <AuFormRow @alignment="inline" class="au-u-margin-top-none">
+                    <AddressSearch
+                      @address={{@address}}
+                      @isSearchEnabledInitially={{true}}
+                      @required={{true}}
+                      @error={{@address.error}}
+                    >
+
+                      <:commonInput>
+                        {{#if @address.isCountryBelgium}}{{/if}}
+                      </:commonInput>
+                    </AddressSearch>
+                    <AuButton
+                      {{! type="submit" }}
+                      class="au-u-margin-left-none"
+                      {{on "click" (fn @search)}}
+                    >Search</AuButton>
+
+                  </AuFormRow>
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </AuContent>
+      </div>
+    </section>
+  </AuBodyContainer>
+</LayoutHome>

@@ -8,11 +8,11 @@ export default class ChangeRequestModel extends Model {
   @attr('datetime') createdAt;
   @attr('datetime') approvedAt;
 
-  @belongsTo('locatie', {
+  @belongsTo('location', {
     async: true,
     inverse: null,
   })
-  forLocation;
+  location;
 
   @belongsTo('agent', {
     async: true,

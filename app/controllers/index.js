@@ -9,11 +9,15 @@ export default class IndexController extends Controller {
   @service session;
   @service router;
 
-  @tracked model;
 
+  @tracked mode = '';
+  @tracked serializedAddress=null;
   @action
   search() {
-    console.log(this.model.address);
-    this.router.transitionTo("search", { id: this.model.address.serialize().id })
+    const addr=this.model.address.serialize();
+    this.serializedAddress=JSON.stringify(addr);
+    this.mode = 'search';
+
   }
+
 }

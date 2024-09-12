@@ -1,6 +1,6 @@
 import Model, { attr } from '@ember-data/model';
 
-export default class AdresModel extends Model {
+export default class AddressModel extends Model {
   @attr uri;
 
   @attr lat;
