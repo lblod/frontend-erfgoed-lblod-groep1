@@ -14,7 +14,9 @@
         <AuContent>
           <div class="au-c-home__form au-o-flow">
             <div class="au-o-grid au-o-grid--small">
-              <div class="au-o-grid__item au-u-1-2@medium au-u-flex au-u-flex--center">
+              <div
+                class="au-o-grid__item au-u-1-2@medium au-u-flex au-u-flex--center"
+              >
                 <img
                   src="/assets/images/undraw_house_searching_re_stk8.svg"
                   alt=""
@@ -32,11 +34,30 @@
                 <AuHeading @level="2" @skin="6">
                   First, let’s check if your building in a cultural monument.
                 </AuHeading>
-                <form class="au-u-margin-top">
+                <div class="au-u-margin-top au-c-form">
                   <AuLabel for="address">Address</AuLabel>
-                  <AuInput id="address" />
-                  <AuButton type="submit">Search</AuButton>
-                </form>
+
+                  <AuFormRow @alignment="inline" class="au-u-margin-top-none">
+                    <AddressSearch
+                      @address={{@model.address}}
+                      @isSearchEnabledInitially={{true}}
+                      @required={{true}}
+                      @error={{@model.address.error}}
+                    >
+
+                      <:commonInput>
+                        {{#if @model.address.isCountryBelgium}}{{/if}}
+                      </:commonInput>
+                    </AddressSearch>
+                    <AuButton
+                      type="submit"
+                      class="au-u-margin-left-none"
+                      {{on "click" (fn this.search)}}
+                    >Search</AuButton>
+
+                  </AuFormRow>
+
+                </div>
               </div>
             </div>
 
