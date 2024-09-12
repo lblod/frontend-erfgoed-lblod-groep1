@@ -30,4 +30,9 @@ Router.map(function () {
   this.route('accessibility-statement');
   this.route('cookie-notice');
   this.route('disclaimer');
+
+  // Location process routes
+  this.route('search');
+  this.route('permissions');
+  this.route('requests');
 });
