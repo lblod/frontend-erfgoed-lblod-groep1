@@ -12,6 +12,7 @@ export default class IndexController extends Controller {
 
   @action
   search() {
+    // this.transitionTo("search")
     console.log(this.model.address.serialize());
   }
 }

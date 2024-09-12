@@ -36,7 +36,6 @@
                 </AuHeading>
                 <div class="au-u-margin-top au-c-form">
                   <AuLabel for="address">Address</AuLabel>
-
                   <AuFormRow @alignment="inline" class="au-u-margin-top-none">
                     <AddressSearch
                       @address={{@model.address}}
@@ -49,11 +48,13 @@
                         {{#if @model.address.isCountryBelgium}}{{/if}}
                       </:commonInput>
                     </AddressSearch>
-                    <AuButton
-                      type="submit"
+                    <AuLink
+                      {{!-- type="submit" --}}
                       class="au-u-margin-left-none"
-                      {{on "click" (fn this.search)}}
-                    >Search</AuButton>
+                      @route="search"
+                      @model={{this.model.address}}
+                      {{!-- {{on "click" (fn this.search)}} --}}
+                    >Search</AuLink>
 
                   </AuFormRow>
 
