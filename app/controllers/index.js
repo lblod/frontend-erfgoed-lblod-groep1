@@ -7,12 +7,13 @@ export default class IndexController extends Controller {
   @service store;
   @service currentSession;
   @service session;
+  @service router;
 
   @tracked model;
 
   @action
   search() {
-    // this.transitionTo("search")
-    console.log(this.model.address.serialize());
+    console.log(this.model.address);
+    this.router.transitionTo("search", { id: this.model.address.serialize().id })
   }
 }
