@@ -17,7 +17,6 @@ export default class AddressSearchComponent extends Component {
   @action
   handleAddressChange(data) {
     const addresses = data?.addresses;
-    const source = data?.source;
 
     this.selectedAddress = null;
     this.addressWithBusNumber = null;
@@ -33,7 +32,7 @@ export default class AddressSearchComponent extends Component {
         this.addressesWithBusNumbers = addresses;
         this.handleBusNumberChange(firstAddress);
       } else {
-        this.updateAddressAttributes(firstAddress, source);
+        this.updateAddressAttributes(firstAddress);
       }
     }
   }
@@ -44,31 +43,29 @@ export default class AddressSearchComponent extends Component {
     this.updateAddressAttributes(address);
   }
 
-  updateAddressAttributes(address, source) {
+  updateAddressAttributes(address) {
     this.args.address.setProperties({
-      street: address.street,
-      number: address.housenumber,
-      boxNumber: address.busNumber,
-      postcode: address.zipCode,
-      source,
-      municipality: address.municipality,
-      province: null,
-      country: address.country,
-      addressRegisterUri: address.uri,
+      straatnaam: address.street,
+      huisnummer: address.housenumber,
+      busnummer: address.busNumber,
+      postbus: address.zipCode,
+      gemeentenaam: address.municipality,
+      land: address.country,
+      lat: address.lat,
+      lon: address.lon,
     });
   }
 
   resetAddressAttributes() {
     this.args.address.setProperties({
-      street: null,
-      number: null,
-      boxNumber: null,
-      postcode: null,
-      source: null,
-      municipality: null,
-      province: null,
-      country: null,
-      addressRegisterUri: null,
+      straatnaam: null,
+      huisnummer: null,
+      busnummer: null,
+      postbus: null,
+      gemeentenaam: null,
+      land: null,
+      lat: null,
+      lon: null,
     });
   }
 }

@@ -33,14 +33,7 @@ export default class AddressRegisterSelectorComponent extends Component {
       // avoid duplicates, e.g Liebaardstnaat 10, 8792 Waregem
       this.args.onChange({
         source: false,
-        addresses: [
-          ...new Map(
-            addresses.map((a) => [
-              `${a.street}${a.housenumber}${a.busNumber}`,
-              a,
-            ]),
-          ).values(),
-        ],
+        addresses: [addressSuggestion],
       });
     }
   }

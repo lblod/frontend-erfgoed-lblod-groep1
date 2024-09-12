@@ -9,7 +9,7 @@ export default class IndexRoute extends Route {
 
   async model() {
     return {
-      address: this.store.createRecord('address'),
+      address: this.store.createRecord('adres'),
     };
   }
 }
