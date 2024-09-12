@@ -16,7 +16,43 @@
       id="content"
       tabindex="-1"
     >
-      {{outlet}}
+      <AuMainContainer as |main|>
+        {{#if this.isProcessRoute}}
+          <main.sidebar>
+            <div class="au-c-sidebar">
+              <div class="au-c-sidebar__content">
+                <nav>
+                  <ul class="au-c-list-navigation">
+                    <li class="au-c-list-navigation__item">
+                      <AuNavigationLink @route="search">
+                        <AuIcon @icon="search" @alignment="left" />
+                        Search
+                      </AuNavigationLink>
+                    </li>
+                    <li class="au-c-list-navigation__item">
+                      <AuNavigationLink @route="permissions">
+                        <AuIcon @icon="clock-rewind" @alignment="left" />
+                        Permissions
+                      </AuNavigationLink>
+                    </li>
+                    <li class="au-c-list-navigation__item">
+                      <AuNavigationLink @route="requests">
+                        <AuIcon @icon="documents" @alignment="left" />
+                        My request
+                      </AuNavigationLink>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </main.sidebar>
+        {{/if}}
+        <main.content>
+          <AuBodyContainer>
+            {{outlet}}
+          </AuBodyContainer>
+        </main.content>
+      </AuMainContainer>
     </div>
   </main>
 </AuApp>
