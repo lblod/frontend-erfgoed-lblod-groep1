@@ -1,4 +1,5 @@
 import Application from '@ember/application';
+// import 'ember-power-select/styles';
 import Resolver from 'ember-resolver';
 import loadInitializers from 'ember-load-initializers';
 import config from 'frontend-hackathon/config/environment';

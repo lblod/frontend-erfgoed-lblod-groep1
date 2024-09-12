@@ -34,6 +34,7 @@
     "@ember/test-helpers": "^3.3.0",
     "@glimmer/component": "^1.1.2",
     "@glimmer/tracking": "^1.1.2",
+    "@lblod/ember-address-search": "^0.1.0",
     "@lblod/ember-mock-login": "^0.10.0",
     "@triply/yasgui": "^4.2.20",
     "broccoli-asset-rev": "^3.0.0",

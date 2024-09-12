@@ -1,0 +1,12 @@
+<PowerSelect
+  @selected={{this.selectedAddress}}
+  @onChange={{perform this.selectSuggestion}}
+  @renderInPlace={{true}}
+  @options={{this.addressSuggestion}}
+  @searchEnabled={{true}}
+  @searchField="fullAddress"
+  @onKeydown={{(perform this.handleKeydown)}}
+  as |name|
+>
+  {{name.fullAddress}}
+</PowerSelect>
