@@ -48,7 +48,7 @@ export default class AddressRegisterSelectorComponent extends Component {
   *handleKeydown(_, e) {
     yield timeout(400);
 
-    let text = e.target.value;
+    let text = e.target.value || '';
     if (text.length > 0) {
       this.addressSuggestion = yield this.addressRegister.suggest(text);
     }
