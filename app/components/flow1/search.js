@@ -5,15 +5,22 @@ import { tracked } from '@glimmer/tracking';
 export default class SearchComponent extends Component {
   @tracked
   address;
+  @tracked
+  monuments;
   @service
   store;
+  @service
+  inventoris;
 
   constructor() {
     super(...arguments);
-    const json = JSON.parse(this.args.serializedAddress);
-
-    const addr = this.store.createRecord('address');
-    addr.setProperties(json.data.attributes);
-    this.address = addr;
+    this.searchMonuments.perform();
   }
+    @task(function* () {
+    this.monuments = yield this.inventoris.searchByAddress(
+      this.args.address,
+    );
+    console.log(this.monuments);
+  })
+  searchMonuments;
 }
