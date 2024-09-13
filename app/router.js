@@ -19,6 +19,7 @@ Router.map(function () {
     this.route('index', { path: '' });
     this.route('step-one');
     this.route('step-two');
+    this.route('step-three');
   });
   this.route('requests');
   this.route('legal', { path: '/legaal' }, function () {
