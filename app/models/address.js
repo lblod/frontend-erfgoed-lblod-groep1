@@ -18,11 +18,13 @@ export default class AddressModel extends Model {
   @attr volledigAdres;
 
   get combineFullAddress() {
-    let fullStreet = `${this.straatnaam || ''} ${this.huisnummer || ''} ${this.busnummer || ''
-      }`.trim();
+    let fullStreet = `${this.straatnaam || ''} ${this.huisnummer || ''} ${
+      this.busnummer || ''
+    }`.trim();
 
-    let muncipalityInformation = `${this.postcode || ''} ${this.gemeentenaam || ''
-      }`.trim();
+    let muncipalityInformation = `${this.postcode || ''} ${
+      this.gemeentenaam || ''
+    }`.trim();
 
     if (fullStreet && muncipalityInformation) {
       return `${fullStreet}, ${muncipalityInformation}`;

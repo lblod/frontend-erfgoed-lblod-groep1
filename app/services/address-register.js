@@ -25,7 +25,7 @@ export default class AddressRegisterService extends Service {
         await fetch(`${this.endpoint}/search?query=${fuzzyString}`)
       ).json();
 
-      return results.adressen.map(function(result) {
+      return results.adressen.map(function (result) {
         return {
           addressRegisterId: result.ID,
           street: result.Thoroughfarename,
@@ -61,7 +61,7 @@ export default class AddressRegisterService extends Service {
           )
         ).json();
 
-        addresses = results.map(function(result) {
+        addresses = results.map(function (result) {
           return {
             uri: result.identificator.id,
             addressRegisterId: result.identificator.objectId,

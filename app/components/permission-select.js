@@ -11,7 +11,7 @@ export default class PermissionSelectComponent extends Component {
     super(...arguments);
     this.loadOptionsTask.perform();
   }
-  @task(function*() {
+  @task(function* () {
     try {
       let options = yield this.store.findAll('permission-classification-code');
       this.options = options;
