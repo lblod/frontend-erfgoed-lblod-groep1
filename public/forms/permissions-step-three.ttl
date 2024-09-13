@@ -50,6 +50,10 @@ nodes:81dac812-c1a6-4768-9a0f-161aaa39fa2e
     a form:Field;
     form:displayType display:conceptSchemeSelector;
     form:partOf nodes:d7b33768-3723-4291-a7be-3d8a7d7cdbc1;
+        form:options
+        """{
+  "conceptScheme": "http://lblod.data.gift/concept-schemes/123"
+}""";
     form:validatedBy
             [
                 a form:RequiredConstraint;
