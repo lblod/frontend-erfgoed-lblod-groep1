@@ -12,7 +12,7 @@ import { task } from 'ember-concurrency';
 
 export default class StepOneController extends Controller {
   @service toaster;
-
+  @service router;
   @tracked formStore;
   @tracked form;
   @tracked showForcedErrors;
