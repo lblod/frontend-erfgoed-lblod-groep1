@@ -1,110 +1,78 @@
 {{page-title "Search"}}
 <LayoutHome>
-  <AuBodyContainer class="au-u-background-white-100 au-o-flow">
-    <section class="c-home">
-      <div class="au-o-flow">
-        <AuContent>
-          <div class="au-o-grid">
-            <div class="au-o-grid__item au-u-1-2@medium">
-              <AuHeading @level="2" @skin="4" class="au-u-margin-bottom">You
-                searched for
-                {{@address.combineFullAddress}}</AuHeading>
+  <AuBodyContainer
+    class="au-u-background-white-100 au-o-flow au-u-margin-left au-u-margin-right au-u-margin-top"
+  >
+    <div class="au-o-grid">
+      <div class="au-o-grid__item au-u-1-2@medium">
+        <AuHeading @level="2" @skin="4" class="au-u-margin-bottom">You searched
+          for
+          {{@address.combineFullAddress}}
+          <LeafletMap
+            @lat={{@address.lat}}
+            @lng={{@address.lon}}
+            @zoom="18"
+            class="map"
+            as |layers|
+          >
+            <layers.tile
+              @url="https://tile.openstreetmap.org/{z}/{x}/{y}.png"
+            />
+            <layers.marker
+              @lat={{@address.lat}}
+              @lng={{@address.lon}}
+              as |marker|
+            />
+          </LeafletMap>
+        </AuHeading>
 
-            </div>
-            {{#unless this.searchMonuments.isLoading}}
-
-              <div class="au-o-grid__item au-u-1-2@medium">
-                <AuButton>Existing permissions for this property</AuButton>
-              </div>
-            {{/unless}}
-          </div>
-          {{#unless this.searchMonuments.isLoading}}
-
-            {{#if this.monuments}}
-
-              <AuAlert
-                class="au-u-margin-top"
-                @title="This adres has cultural heritage sites"
-                @skin="success"
-                @icon="check"
-              />
-            {{/if}}
-
-            <AuTable @size={{this.size}}>
-              <:title>Monuments</:title>
-              <:header>
-                <tr>
-                  <th>naam</th>
-                  <th>adres</th>
-                  <th>status</th>
-                  <th></th>
-                </tr>
-              </:header>
-              <:body>
-                {{#each this.monuments as |monument|}}
-                  <tr>
-
-                    <td><AuLinkExternal
-                        href={{monument.uri}}
-                      >{{monument.naam}}</AuLinkExternal></td>
-                    <td>{{monument.locatie_samenvatting}}</td>
-                    <td>{{monument.status.naam}}</td>
-                    <td></td>
-                  </tr>
-                {{/each}}
-
-              </:body>
-              <:footer>
-
-              </:footer>
-            </AuTable>
-
-            <div class="au-u-margin-top au-u-margin-left">
-              <AuHeading
-                @level="6"
-                @skin="6"
-                class="au-u-margin-bottom"
-              >Monument data</AuHeading>
-              <div class="au-o-grid">
-
-                <div
-                  class="au-o-grid__item au-u-1-2@medium au-u-background-gray-100"
-                >Monument data
-                  <div>
-                    <strong>Name</strong>
-                    <p>Mockup</p>
-                  </div>
-                  <div>
-                    <strong>Location</strong>
-                    <p>{{@address.combineFullAddress}}</p>
-                  </div>
-
-                </div>
-                <div class="au-o-grid__item au-u-1-2@medium">
-                  <LeafletMap
-                    @lat={{@address.lat}}
-                    @lng={{@address.lon}}
-                    @zoom="18"
-                    class="map"
-                    as |layers|
-                  >
-                    <layers.tile
-                      @url="https://tile.openstreetmap.org/{z}/{x}/{y}.png"
-                    />
-                    <layers.marker
-                      @lat="50.858420478352606"
-                      @lng="4.3568442738185125"
-                      as |marker|
-                    />
-                  </LeafletMap>
-
-                </div>
-              </div>
-            </div>
-          {{/unless}}
-
-        </AuContent>
       </div>
-    </section>
+    </div>
+    {{#unless this.searchMonuments.isLoading}}
+
+      {{#if this.monuments}}
+
+        <AuAlert
+          class="au-u-margin-top"
+          @title="This adres has cultural heritage sites"
+          @skin="success"
+          @icon="check"
+        />
+      {{/if}}
+
+      <AuTable @size={{this.size}}>
+        <:title>Monuments</:title>
+        <:header>
+          <tr>
+            <th>naam</th>
+            <th>adres</th>
+            <th>status</th>
+            <th></th>
+          </tr>
+        </:header>
+        <:body>
+          {{#each this.monuments as |monument|}}
+            <tr>
+
+              <td><AuLinkExternal
+                  href={{monument.uri}}
+                >{{monument.naam}}</AuLinkExternal></td>
+              <td>{{monument.locatie_samenvatting}}</td>
+              <td>{{monument.status.naam}}</td>
+              <td>
+                <AuButton>Existing permissions for this property</AuButton>
+
+              </td>
+            </tr>
+          {{/each}}
+
+        </:body>
+        <:footer>
+
+        </:footer>
+      </AuTable>
+
+    {{/unless}}
+
   </AuBodyContainer>
 </LayoutHome>
