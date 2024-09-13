@@ -4,20 +4,28 @@
     class="au-u-background-white-100 au-o-flow au-u-margin-left au-u-margin-right au-u-margin-top"
   >
     <div class="au-o-grid">
-      <div class="au-o-grid__item au-u-1-2@medium">
+      <div class="au-o-grid__item au-u-3-4">
         <AuHeading @level="2" @skin="4" class="au-u-margin-bottom">Current
           permissions for
           {{this.address}}
+
         </AuHeading>
 
       </div>
+      {{#if this.hasAccess}}
+
+        <div class="au-o-grid__item au-u-1-4">
+          <AuButton>Request new permission</AuButton>
+
+        </div>
+      {{/if}}
     </div>
 
     <AuTable>
       <:title>Permissions</:title>
       <:header>
         <tr>
-          <th>Type</th>
+          <th>Name</th>
           <th>Date</th>
           <th>status</th>
         </tr>
@@ -25,9 +33,8 @@
       <:body>
         {{#each @model as |request|}}
           <tr>
-
-            <td></td>
-            <td></td>
+            <td>{{request.naam}}</td>
+            <td>{{request.createdAt}}</td>
             <td></td>
           </tr>
         {{/each}}

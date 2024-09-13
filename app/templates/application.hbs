@@ -35,12 +35,14 @@
                         Permissions
                       </AuNavigationLink>
                     </li>
-                    <li class="au-c-list-navigation__item">
-                      <AuNavigationLink @route="requests">
-                        <AuIcon @icon="documents" @alignment="left" />
-                        My request
-                      </AuNavigationLink>
-                    </li>
+                    {{#if this.hasAccess}}
+                      <li class="au-c-list-navigation__item">
+                        <AuNavigationLink @route="requests">
+                          <AuIcon @icon="documents" @alignment="left" />
+                          My request
+                        </AuNavigationLink>
+                      </li>
+                    {{/if}}
                   </ul>
                 </nav>
               </div>

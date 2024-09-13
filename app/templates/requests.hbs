@@ -1,3 +1,39 @@
 {{page-title "Requests"}}
 
-<h1>Requests view</h1>
+<LayoutHome>
+  <AuBodyContainer
+    class="au-u-background-white-100 au-o-flow au-u-margin-left au-u-margin-right au-u-margin-top"
+  >
+    <div class="au-o-grid">
+      <div class="au-o-grid__item au-u-1-2@medium">
+        <AuHeading @level="2" @skin="4" class="au-u-margin-bottom">My Requests
+        </AuHeading>
+
+      </div>
+    </div>
+
+    <AuTable>
+      <:header>
+        <tr>
+          <th>Name</th>
+          <th>Date</th>
+          <th>status</th>
+        </tr>
+      </:header>
+      <:body>
+        {{#each @model as |request|}}
+          <tr>
+            <td>{{request.naam}}</td>
+            <td>{{request.createdAt}}</td>
+            <td></td>
+          </tr>
+        {{/each}}
+
+      </:body>
+      <:footer>
+
+      </:footer>
+    </AuTable>
+
+  </AuBodyContainer>
+</LayoutHome>
