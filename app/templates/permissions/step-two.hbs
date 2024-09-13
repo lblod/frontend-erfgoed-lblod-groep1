@@ -23,7 +23,11 @@
             @icon="arrow-left"
             iconAlignment="left"
           >previous</AuButton>
-          <AuButton @icon="arrow-right" iconAlignment="right">Next</AuButton>
+          <AuButton
+            @icon="arrow-right"
+            iconAlignment="right"
+            {{on "click" this.validateAndTransition.perform}}
+          >Next</AuButton>
         </AuContent>
       </div>
     </div>

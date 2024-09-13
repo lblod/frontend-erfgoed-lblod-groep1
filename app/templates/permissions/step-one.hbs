@@ -14,13 +14,17 @@
             @form={{this.form}}
             @graphs={{this.model.graphs}}
             @formStore={{this.formStore}}
-            @forceShowErrors={{false}}
+            @forceShowErrors={{this.showForcedErrors}}
             @useNewListingLayout={{true}}
             @sourceNode={{this.model.sourceNode}}
           />
         {{/unless}}
         <AuContent @skin="small" class="au-u-flex-self-end">
-          <AuButton @icon="arrow-right" iconAlignment="right">Next</AuButton>
+          <AuButton
+            @icon="arrow-right"
+            iconAlignment="right"
+            {{on "click" this.validateAndTransition.perform}}
+          >Next</AuButton>
         </AuContent>
       </div>
     </div>
