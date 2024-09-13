@@ -1,7 +1,7 @@
 import Service, { service } from '@ember/service';
 import { tracked } from '@glimmer/tracking';
 
-const EDITOR_ROLES = ['Hackathon'];
+const EDITOR_ROLES = ['Hackathon-Org', 'Hackathon-Requester'];
 
 export default class CurrentSessionService extends Service {
   @service session;
@@ -34,7 +34,7 @@ export default class CurrentSessionService extends Service {
   }
 
   get hasEditorRole() {
-    return this.roles.some((role) => EDITOR_ROLES.includes(role));
+    return this.roles?.some((role) => EDITOR_ROLES.includes(role));
   }
 
   get canEdit() {
