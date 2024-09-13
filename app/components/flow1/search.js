@@ -16,11 +16,8 @@ export default class SearchComponent extends Component {
     super(...arguments);
     this.searchMonuments.perform();
   }
-    @task(function* () {
-    this.monuments = yield this.inventoris.searchByAddress(
-      this.args.address,
-    );
-    console.log(this.monuments);
+  @task(function* () {
+    this.monuments = yield this.inventoris.searchByAddress(this.args.address);
   })
   searchMonuments;
 }
