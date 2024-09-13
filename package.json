@@ -26,6 +26,8 @@
   },
   "devDependencies": {
     "@appuniversum/ember-appuniversum": "^3.5.0",
+    "@lblod/ember-submission-form-fields": "^2.21.0",
+
     "@babel/core": "^7.24.7",
     "@babel/eslint-parser": "^7.24.7",
     "@babel/plugin-proposal-decorators": "^7.24.7",
@@ -96,6 +98,7 @@
   },
   "dependencies": {
     "file-saver": "^2.0.5",
-    "node-sass": "^9.0.0"
+    "node-sass": "^9.0.0",
+    "rdflib": "^2.2.35"
   }
 }

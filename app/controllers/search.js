@@ -9,7 +9,7 @@ export default class SearchController extends Controller {
   @service router;
   @action
   permissionFor(monument) {
-    this.router.transitionTo('permissions', {
+    this.router.transitionTo('permissions.index', {
       queryParams: {
         inventorisUri: monument.uri,
         address: monument.locatie_samenvatting,

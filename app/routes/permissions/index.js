@@ -1,7 +1,7 @@
 import Route from '@ember/routing/route';
 
 import { service } from '@ember/service';
-export default class PermissionsRoute extends Route {
+export default class PermissionsIndexRoute extends Route {
   @service store;
   queryParams = {
     inventorisUri: {

@@ -15,7 +15,10 @@ Router.map(function () {
 
   // Location process routes
   this.route('search');
-  this.route('permissions');
+  this.route('permissions', function () {
+    this.route('index', { path: '' });
+    this.route('step-one');
+  });
   this.route('requests');
   this.route('legal', { path: '/legaal' }, function () {
     this.route('disclaimer');
