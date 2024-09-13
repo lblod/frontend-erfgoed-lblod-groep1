@@ -20,6 +20,7 @@ export default class StepOneController extends Controller {
   setup = task(async (model) => {
     this.formStore = new ForkingStore();
     this.formStore.parse(model.ttlCode, model.graphs.formGraph, 'text/turtle');
+    this.formStore.parse(model.metaTtl, model.graphs.metaGraph, 'text/turtle');
 
     this.form = this.formStore.any(
       undefined,

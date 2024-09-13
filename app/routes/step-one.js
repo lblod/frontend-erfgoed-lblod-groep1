@@ -9,6 +9,7 @@ export default class StepOneRoute extends Route {
     return {
       graphs: GRAPHS,
       ttlCode: await getLocalFileContentAsText('/permissions-step-one.ttl'),
+      metaTtl: await getLocalFileContentAsText('/meta.ttl'),
       sourceNode: new RDFNode('http://hackaton-g-one/sourcenode'),
     };
   }
