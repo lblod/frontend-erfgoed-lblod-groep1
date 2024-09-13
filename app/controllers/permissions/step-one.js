@@ -41,6 +41,8 @@ export default class PermissionsStepOneController extends Controller {
         'Missing information',
         { timeout: 2000 },
       );
+    } else {
+      this.router.transitionTo('permissions.step-two');
     }
   });
 }

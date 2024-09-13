@@ -1,5 +1,6 @@
 import Controller from '@ember/controller';
 
+import { action } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
 import { service } from '@ember/service';
 
@@ -12,6 +13,7 @@ import { task } from 'ember-concurrency';
 
 export default class PermissionsStepTwoController extends Controller {
   @service toaster;
+  @service router;
 
   @tracked formStore;
   @tracked form;
@@ -28,6 +30,11 @@ export default class PermissionsStepTwoController extends Controller {
       model.graphs.formGraph,
     );
   });
+
+  @action
+  toPreviousStep() {
+    this.router.transitionTo('permissions.step-two');
+  }
 
   validateAndTransition = task(async () => {
     this.showForcedErrors = validateForm(this.form, {
