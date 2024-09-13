@@ -5,14 +5,14 @@ export default class PermissionsRoute extends Route {
   @service store;
   queryParams = {
     inventorisUri: {
-      refreshModel: true, // Refresh model when this query param changes
+      refreshModel: true,
+    },
+    address: {
+      refreshModel: false,
     },
   };
-  setupController(controller, model) {
-    controller.set('model', model);
-  }
+
   async model(params) {
-    console.log(params);
     return this.store.query('change-request', {
       filter: { 'inventoris-uri': params.inventorisUri },
     });

@@ -9,18 +9,11 @@ export default class SearchController extends Controller {
   @service router;
   @action
   permissionFor(monument) {
-    this.router
-      .transitionTo('permissions', {
-        queryParams: {
-          inventorisUri: monument.uri, // Replace with the dynamic value
-        },
-      })
-      .then((route) => {
-        console.log(monument);
-        route.setupController(route.controller, {
-          address: this.model.address,
-          monument: monument,
-        });
-      });
+    this.router.transitionTo('permissions', {
+      queryParams: {
+        inventorisUri: monument.uri,
+        address: monument.locatie_samenvatting,
+      },
+    });
   }
 }
