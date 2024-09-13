@@ -10,11 +10,8 @@ export default class IndexController extends Controller {
   @service router;
 
   @tracked mode = '';
-  @tracked serializedAddress = null;
   @action
   search() {
-    const addr = this.model.address.serialize();
-    this.serializedAddress = JSON.stringify(addr);
     this.router.transitionTo('search').then((route) => {
       route.setupController(route.controller, {
         address: this.model.address,

@@ -1,8 +1,5 @@
 {{#if (eq this.mode "")}}
   <Flow1::Index @address={{@model.address}} @search={{this.search}} />
 {{else if (eq this.mode "search")}}
-  <Flow1::Search
-    @serializedAddress={{this.serializedAddress}}
-    @address={{@model.address}}
-  />
+  <Flow1::Search @address={{@model.address}} />
 {{/if}}
