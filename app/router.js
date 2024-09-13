@@ -13,6 +13,10 @@ Router.map(function () {
   });
   this.route('index', { path: '' });
 
+  // Location process routes
+  this.route('search');
+  this.route('permissions');
+  this.route('requests');
   this.route('legal', { path: '/legaal' }, function () {
     this.route('disclaimer');
     this.route('cookiestatement', { path: '/cookieverklaring' });
@@ -20,19 +24,13 @@ Router.map(function () {
       path: '/toegankelijkheidsverklaring',
     });
   });
-
+  this.route('accessibility-statement');
+  this.route('cookie-notice');
+  this.route('disclaimer');
   this.route('unauthorized', { path: 'niet-toegestaan' });
   this.route('sparql');
 
   this.route('route-not-found', {
     path: '/*wildcard',
   });
-  this.route('accessibility-statement');
-  this.route('cookie-notice');
-  this.route('disclaimer');
-
-  // Location process routes
-  this.route('search');
-  this.route('permissions');
-  this.route('requests');
 });

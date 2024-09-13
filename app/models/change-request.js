@@ -5,14 +5,15 @@ export default class ChangeRequestModel extends Model {
 
   @attr naam;
   @attr eventType;
+  @attr inventorisUri;
   @attr('datetime') createdAt;
   @attr('datetime') approvedAt;
 
-  @belongsTo('locatie', {
+  @belongsTo('location', {
     async: true,
     inverse: null,
   })
-  forLocation;
+  location;
 
   @belongsTo('agent', {
     async: true,

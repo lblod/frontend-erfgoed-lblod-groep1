@@ -1,8 +1,8 @@
 import Route from '@ember/routing/route';
 
+import { service } from '@ember/service';
 export default class SearchRoute extends Route {
-    model(params) {
-        console.log(params);
-    }
-
+  setupController(controller, model) {
+    controller.set('model', model);
+  }
 }

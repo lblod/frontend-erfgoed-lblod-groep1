@@ -1,6 +1,6 @@
 import Model, { attr, hasMany } from '@ember-data/model';
 
-export default class LocatieModel extends Model {
+export default class LocationModel extends Model {
   @attr uri;
 
   @attr naam;

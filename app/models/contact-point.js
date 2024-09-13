@@ -6,7 +6,7 @@ export default class ContactPointModel extends Model {
   @attr email;
   @attr telephone;
 
-  @belongsTo('adres', {
+  @belongsTo('address', {
     async: true,
     inverse: null,
   })

@@ -1,3 +1,42 @@
 {{page-title "Permissions"}}
+<LayoutHome>
+  <AuBodyContainer
+    class="au-u-background-white-100 au-o-flow au-u-margin-left au-u-margin-right au-u-margin-top"
+  >
+    <div class="au-o-grid">
+      <div class="au-o-grid__item au-u-1-2@medium">
+        <AuHeading @level="2" @skin="4" class="au-u-margin-bottom">Current
+          permissions for
+          {{this.address}}
+        </AuHeading>
 
-<h1>Permissions view</h1>
+      </div>
+    </div>
+
+    <AuTable>
+      <:title>Permissions</:title>
+      <:header>
+        <tr>
+          <th>Type</th>
+          <th>Date</th>
+          <th>status</th>
+        </tr>
+      </:header>
+      <:body>
+        {{#each @model as |request|}}
+          <tr>
+
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        {{/each}}
+
+      </:body>
+      <:footer>
+
+      </:footer>
+    </AuTable>
+
+  </AuBodyContainer>
+</LayoutHome>

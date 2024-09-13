@@ -1,0 +1,79 @@
+{{page-title "Search"}}
+<LayoutHome>
+  <AuBodyContainer
+    class="au-u-background-white-100 au-o-flow au-u-margin-left au-u-margin-right au-u-margin-top"
+  >
+    <div class="au-o-grid">
+      <div class="au-o-grid__item au-u-1-2@medium">
+        <AuHeading @level="2" @skin="4" class="au-u-margin-bottom">You searched
+          for
+          {{@address.combineFullAddress}}
+          <LeafletMap
+            @lat={{@address.lat}}
+            @lng={{@address.lon}}
+            @zoom="18"
+            class="map"
+            as |layers|
+          >
+            <layers.tile
+              @url="https://tile.openstreetmap.org/{z}/{x}/{y}.png"
+            />
+            <layers.marker
+              @lat={{@address.lat}}
+              @lng={{@address.lon}}
+              as |marker|
+            />
+          </LeafletMap>
+        </AuHeading>
+
+      </div>
+    </div>
+    {{#unless this.searchMonuments.isLoading}}
+
+      {{#if this.monuments}}
+
+        <AuAlert
+          class="au-u-margin-top"
+          @title="This adres has cultural heritage sites"
+          @skin="success"
+          @icon="check"
+        />
+      {{/if}}
+
+      <AuTable>
+        <:title>Monuments</:title>
+        <:header>
+          <tr>
+            <th>naam</th>
+            <th>adres</th>
+            <th>status</th>
+            <th></th>
+          </tr>
+        </:header>
+        <:body>
+          {{#each this.monuments as |monument|}}
+            <tr>
+
+              <td><AuLinkExternal
+                  href={{monument.uri}}
+                >{{monument.naam}}</AuLinkExternal></td>
+              <td>{{monument.locatie_samenvatting}}</td>
+              <td>{{monument.status.naam}}</td>
+              <td>
+                <AuButton {{on "click" (fn @permissionFor monument)}}>Existing
+                  permissions for this property</AuButton>
+
+              </td>
+            </tr>
+          {{/each}}
+
+        </:body>
+        <:footer>
+
+        </:footer>
+      </AuTable>
+
+    {{/unless}}
+
+  </AuBodyContainer>
+</LayoutHome>

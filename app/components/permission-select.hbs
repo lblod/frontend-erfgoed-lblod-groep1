@@ -1,0 +1,13 @@
+<PowerSelect
+  @allowClear={{false}}
+  @searchEnabled={{false}}
+  @placeholder="choose a permission"
+  @loadingMessage="loading..."
+  @options={{this.options}}
+  @selected={{this.classification}}
+  @onChange={{this.onChange}}
+  @triggerId="shapeConcepts"
+  as |shapeConcept|
+>
+  {{shapeConcept.label}}
+</PowerSelect>

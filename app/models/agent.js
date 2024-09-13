@@ -1,11 +1,11 @@
 import Model, { belongsTo } from '@ember-data/model';
 
 export default class AgentModel extends Model {
-  @belongsTo('locatie', {
+  @belongsTo('location', {
     async: true,
     inverse: null,
   })
-  locatie;
+  location;
 
   @belongsTo('contact-point', {
     async: true,

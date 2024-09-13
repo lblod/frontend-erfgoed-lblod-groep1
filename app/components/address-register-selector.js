@@ -17,7 +17,7 @@ export default class AddressRegisterSelectorComponent extends Component {
 
       if (!this.addressRegister.isEmpty(addressSuggestion)) {
         this.addressSuggestion = addressSuggestion;
-        this.selectedAddress = addressSuggestion;
+        this.selectedAddress = addressSuggestion[0];
       }
     }
   }

@@ -2,7 +2,7 @@ import Agent from './agent';
 
 import { attr } from '@ember-data/model';
 
-export default class PersoonModel extends Agent {
+export default class PersonModel extends Agent {
   @attr uri;
 
   @attr achternaam;
