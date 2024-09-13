@@ -12,10 +12,13 @@
         </AuHeading>
 
       </div>
-      <div class="au-o-grid__item au-u-1-4">
-        <AuButton>Request new permission</AuButton>
+      {{#if this.hasAccess}}
 
-      </div>
+        <div class="au-o-grid__item au-u-1-4">
+          <AuButton>Request new permission</AuButton>
+
+        </div>
+      {{/if}}
     </div>
 
     <AuTable>
