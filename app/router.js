@@ -16,6 +16,9 @@ Router.map(function () {
   // Location process routes
   this.route('search');
   this.route('permissions');
+  this.route('step-one', { path: '/permission-flow/step-1' });
+  this.route('step-two', { path: '/permission-flow/step-2' });
+  this.route('step-three', { path: '/permission-flow/step-3' });
   this.route('requests');
   this.route('legal', { path: '/legaal' }, function () {
     this.route('disclaimer');

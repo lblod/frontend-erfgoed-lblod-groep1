@@ -1,0 +1,73 @@
+@prefix : <#>.
+@prefix form: <http://lblod.data.gift/vocabularies/forms/>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+@prefix displayTypes: <http://lblod.data.gift/display-types/>.
+@prefix nodes: <http://data.lblod.info/form-data/nodes/>.
+@prefix emb: <http://ember-submission-form-fields/>.
+
+nodes:24289e48-258f-4919-8c3e-5783a6acb4a4
+    a form:Field;
+    form:displayType displayTypes:defaultInput;
+    form:partOf nodes:d7b33768-3723-4291-a7be-3d8a7d7cdbc1;
+    sh:name "Property name";
+    sh:order 2;
+    sh:path nodes:e61f56db-6346-4a61-a75e-33e091789e40 .
+nodes:389a38fd-2ed3-407b-bcd9-8b2b1561b194
+    a form:Field;
+    form:displayType displayTypes:numericalInput;
+    form:partOf nodes:d7b33768-3723-4291-a7be-3d8a7d7cdbc1;
+    sh:name "Postcode";
+    sh:order 5;
+    sh:path nodes:b927031d-29e4-4156-9b70-a2aa9c0a004a.
+nodes:70452376-5c83-4da9-b101-493a493ac835
+    a form:Field;
+    form:displayType displayTypes:defaultInput;
+    form:partOf nodes:d7be2462-5570-46b1-8531-cb32d753e8f6;
+    sh:name "Sectie";
+    sh:order 7;
+    sh:path nodes:eed4eb3f-9ba8-476a-ac2c-1321226545bf.
+nodes:8c59188f-aa93-4a2c-baf1-426cbc4ec3c8
+    a form:Field;
+    form:displayType displayTypes:defaultInput;
+    form:partOf nodes:d7b33768-3723-4291-a7be-3d8a7d7cdbc1;
+    sh:name "Streetname and number";
+    sh:order 3;
+    sh:path nodes:34ede208-7597-4244-8ab4-29a6889ed63c.
+nodes:c7041c0b-c716-4f53-b4a9-d4f24f4a2d94
+    a form:Field;
+    form:displayType displayTypes:numericalInput;
+    form:partOf nodes:d7be2462-5570-46b1-8531-cb32d753e8f6;
+    sh:name "Number";
+    sh:order 8;
+    sh:path nodes:c8cf5ce7-312c-4141-9f18-61135a8d81c1 .
+nodes:d1d5c982-5cdf-4040-b2d2-4c9ddc708564
+    a form:Field;
+    form:displayType displayTypes:defaultInput;
+    form:partOf nodes:d7be2462-5570-46b1-8531-cb32d753e8f6;
+    sh:name "Afdeling";
+    sh:order 6;
+    sh:path nodes:ee45347f-0a03-4eb0-afe8-a7137e7e1ac6 .
+nodes:d7b33768-3723-4291-a7be-3d8a7d7cdbc1
+a form:Section; sh:name "Property data"; sh:order 1 .
+nodes:d7be2462-5570-46b1-8531-cb32d753e8f6
+a form:Section; sh:name "Cadastral information"; sh:order 2 .
+nodes:e8d3c926-4c57-44b4-8eb8-a464936eba99
+    a form:Field;
+    form:displayType displayTypes:defaultInput;
+    form:partOf nodes:d7b33768-3723-4291-a7be-3d8a7d7cdbc1;
+    sh:name "Municipality";
+    sh:order 4;
+    sh:path nodes:26c4a2eb-80a1-4533-b056-a2d574aff9c1 .
+emb:source-node
+    a form:Form, form:TopLevelForm;
+    form:includes
+        nodes:24289e48-258f-4919-8c3e-5783a6acb4a4,
+        nodes:389a38fd-2ed3-407b-bcd9-8b2b1561b194,
+        nodes:70452376-5c83-4da9-b101-493a493ac835,
+        nodes:8c59188f-aa93-4a2c-baf1-426cbc4ec3c8,
+        nodes:c7041c0b-c716-4f53-b4a9-d4f24f4a2d94,
+        nodes:d1d5c982-5cdf-4040-b2d2-4c9ddc708564,
+        nodes:e8d3c926-4c57-44b4-8eb8-a464936eba99;
+    form:partOf
+        nodes:d7b33768-3723-4291-a7be-3d8a7d7cdbc1,
+        nodes:d7be2462-5570-46b1-8531-cb32d753e8f6 .

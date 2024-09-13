@@ -1,0 +1,36 @@
+{{page-title "Permissions | Step 2"}}
+<LayoutHome>
+  <AuBodyContainer
+    class="au-u-background-white-100 au-o-grid au-u-margin-left au-u-margin-right au-u-margin-top margin-"
+  >
+    <div class="au-o-box">
+      <AuHeading>New permission</AuHeading>
+      <div class="au-o-grid__item au-u-1-2@medium">
+        {{#unless this.setup.isRunning}}
+          <RdfForm
+            @groupClass="au-u-margin-small "
+            @form={{this.form}}
+            @graphs={{this.model.graphs}}
+            @formStore={{this.formStore}}
+            @forceShowErrors={{false}}
+            @useNewListingLayout={{true}}
+            @sourceNode={{this.model.sourceNode}}
+          />
+        {{/unless}}
+        <AuContent @skin="small" class="au-u-flex-spaced">
+          <AuButton
+            @skin="secondary"
+            @icon="arrow-left"
+            iconAlignment="left"
+            {{on 'click' this.toPreviousStep}}
+          >previous</AuButton>
+          <AuButton
+            @icon="arrow-right"
+            iconAlignment="right"
+            {{on "click" this.validateAndTransition.perform}}
+          >Next</AuButton>
+        </AuContent>
+      </div>
+    </div>
+  </AuBodyContainer>
+</LayoutHome>
