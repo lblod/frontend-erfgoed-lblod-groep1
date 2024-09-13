@@ -1,0 +1,81 @@
+@prefix : <#>.
+@prefix display: <http://lblod.data.gift/display-types/>.
+@prefix form: <http://lblod.data.gift/vocabularies/forms/>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+@prefix nodes: <http://data.lblod.info/form-data/nodes/>.
+@prefix emb: <http://ember-submission-form-fields/>.
+
+nodes:218f7d2a-03c7-4e7c-b00b-a18fc557c285
+    a form:Field;
+    form:displayType display:date;
+    form:partOf nodes:d7b33768-3723-4291-a7be-3d8a7d7cdbc1;
+    form:validatedBy
+            [
+                a form:RequiredConstraint;
+                form:grouping form:Bag;
+                sh:path nodes:4d3d21c0-9cd6-4da0-82a5-16e4b73a8dbb;
+                sh:resultMessage "Dit veld is verplicht."
+            ];
+    sh:name "When do you wish to carry out? the works";
+    sh:order 1;
+    sh:path nodes:4d3d21c0-9cd6-4da0-82a5-16e4b73a8dbb.
+nodes:24289e48-258f-4919-8c3e-5783a6acb4a4
+a form:Field; sh:order 2; sh:path nodes:e61f56db-6346-4a61-a75e-33e091789e40 .
+nodes:389a38fd-2ed3-407b-bcd9-8b2b1561b194
+a form:Field; sh:order 5; sh:path nodes:b927031d-29e4-4156-9b70-a2aa9c0a004a.
+nodes:4de8fcbe-59e1-4bc1-9162-f6c318dc3868
+    a form:Field;
+    form:displayType display:textArea;
+    form:partOf nodes:d7b33768-3723-4291-a7be-3d8a7d7cdbc1;
+    form:validatedBy
+            [
+                a form:RequiredConstraint;
+                form:grouping form:Bag;
+                sh:path nodes:13384e0a-e1e8-4483-88b6-700238329c77;
+                sh:resultMessage "Dit veld is verplicht."
+            ],
+            [
+                a form:MaxLength;
+                form:grouping form:MatchEvery;
+                form:max "5000";
+                sh:path nodes:13384e0a-e1e8-4483-88b6-700238329c77;
+                sh:resultMessage "Max. karakters overschreden."
+            ];
+    sh:name "Detailed description";
+    sh:order 3;
+    sh:path nodes:13384e0a-e1e8-4483-88b6-700238329c77 .
+nodes:70452376-5c83-4da9-b101-493a493ac835
+a form:Field; sh:order 7; sh:path nodes:eed4eb3f-9ba8-476a-ac2c-1321226545bf.
+nodes:81dac812-c1a6-4768-9a0f-161aaa39fa2e
+    a form:Field;
+    form:displayType display:conceptSchemeSelector;
+    form:partOf nodes:d7b33768-3723-4291-a7be-3d8a7d7cdbc1;
+    form:validatedBy
+            [
+                a form:RequiredConstraint;
+                form:grouping form:Bag;
+                sh:path nodes:18633a0a-f901-4171-83ae-c269077a9370;
+                sh:resultMessage "Dit veld is verplicht."
+            ];
+    sh:name "Who will be carrying out the works?";
+    sh:order 2;
+    sh:path nodes:18633a0a-f901-4171-83ae-c269077a9370 .
+nodes:8c59188f-aa93-4a2c-baf1-426cbc4ec3c8
+a form:Field; sh:order 3; sh:path nodes:34ede208-7597-4244-8ab4-29a6889ed63c.
+nodes:c7041c0b-c716-4f53-b4a9-d4f24f4a2d94
+a form:Field; sh:order 8; sh:path nodes:c8cf5ce7-312c-4141-9f18-61135a8d81c1 .
+nodes:d1d5c982-5cdf-4040-b2d2-4c9ddc708564
+a form:Field; sh:order 6; sh:path nodes:ee45347f-0a03-4eb0-afe8-a7137e7e1ac6 .
+nodes:d7b33768-3723-4291-a7be-3d8a7d7cdbc1
+a form:Section; sh:name "Permission details"; sh:order 1 .
+nodes:d7be2462-5570-46b1-8531-cb32d753e8f6 a form:Section; sh:order 2 .
+
+nodes:e8d3c926-4c57-44b4-8eb8-a464936eba99
+a form:Field; sh:order 4; sh:path nodes:26c4a2eb-80a1-4533-b056-a2d574aff9c1 .
+emb:source-node
+    a form:Form, form:TopLevelForm;
+    form:includes
+        nodes:218f7d2a-03c7-4e7c-b00b-a18fc557c285,
+        nodes:4de8fcbe-59e1-4bc1-9162-f6c318dc3868,
+        nodes:81dac812-c1a6-4768-9a0f-161aaa39fa2e;
+    form:partOf nodes:d7b33768-3723-4291-a7be-3d8a7d7cdbc1 .
