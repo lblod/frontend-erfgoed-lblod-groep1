@@ -8,7 +8,9 @@ export default class StepTwoRoute extends Route {
   async model() {
     return {
       graphs: GRAPHS,
-      ttlCode: await getLocalFileContentAsText('/permissions-step-two.ttl'),
+      ttlCode: await getLocalFileContentAsText(
+        '/forms/permissions-step-two.ttl',
+      ),
       sourceNode: new RDFNode('http://hackaton-g-one/sourcenode'),
     };
   }

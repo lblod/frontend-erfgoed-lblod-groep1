@@ -8,8 +8,10 @@ export default class StepThreeRoute extends Route {
   async model() {
     return {
       graphs: GRAPHS,
-      ttlCode: await getLocalFileContentAsText('/permissions-step-three.ttl'),
-      metaTtl: await getLocalFileContentAsText('/meta.ttl'),
+      ttlCode: await getLocalFileContentAsText(
+        '/forms/permissions-step-three.ttl',
+      ),
+      metaTtl: await getLocalFileContentAsText('/forms/meta.ttl'),
       sourceNode: new RDFNode('http://hackaton-g-one/sourcenode'),
     };
   }

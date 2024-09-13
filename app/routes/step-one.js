@@ -8,8 +8,8 @@ export default class StepOneRoute extends Route {
   async model() {
     return {
       graphs: GRAPHS,
-      ttlCode: await getLocalFileContentAsText('/permissions-step-one.ttl'),
-      metaTtl: await getLocalFileContentAsText('/meta.ttl'),
+      ttlCode: await getLocalFileContentAsText('/forms/permissions-step-one.ttl'),
+      metaTtl: await getLocalFileContentAsText('/forms/meta.ttl'),
       sourceNode: new RDFNode('http://hackaton-g-one/sourcenode'),
     };
   }
