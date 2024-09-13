@@ -5,6 +5,7 @@ export default class ChangeRequestModel extends Model {
 
   @attr naam;
   @attr eventType;
+  @attr inventorisUri;
   @attr('datetime') createdAt;
   @attr('datetime') approvedAt;
 
