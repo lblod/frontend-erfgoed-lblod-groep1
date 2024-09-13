@@ -9,7 +9,6 @@ export default class IndexController extends Controller {
   @service session;
   @service router;
 
-  @tracked mode = '';
   @action
   search() {
     this.router.transitionTo('search').then((route) => {
@@ -17,6 +16,5 @@ export default class IndexController extends Controller {
         address: this.model.address,
       });
     });
-    this.mode = 'search';
   }
 }

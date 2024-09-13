@@ -60,7 +60,8 @@
               <td>{{monument.locatie_samenvatting}}</td>
               <td>{{monument.status.naam}}</td>
               <td>
-                <AuButton>Existing permissions for this property</AuButton>
+                <AuButton {{on "click" (fn @permissionFor monument)}}>Existing
+                  permissions for this property</AuButton>
 
               </td>
             </tr>

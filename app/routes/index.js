@@ -7,7 +7,7 @@ export default class IndexRoute extends Route {
   @service currentSession;
   @service session;
 
-  async model() {
+  model() {
     return {
       address: this.store.createRecord('address'),
     };
