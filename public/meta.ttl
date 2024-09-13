@@ -37,3 +37,24 @@
             skos:inScheme <http://lblod.data.gift/concept-schemes/6c12157f-2bcc-4c18-9042-68b1ac431c3f>;
             skos:topConceptOf <http://lblod.data.gift/concept-schemes/6c12157f-2bcc-4c18-9042-68b1ac431c3f>;
             skos:prefLabel "Het herstellen van de antieke trapleuning".
+
+
+ <http://lblod.data.gift/concept-schemes/123> a skos:Concept;
+            mu:uuid "123";
+            skos:prefLabel "Who".
+
+    <http://lblod.data.gift/concept-schemes/321> a skos:Concept, ext:PermissionClassificatieCode;
+            mu:uuid "321";
+            skos:inScheme <http://lblod.data.gift/concept-schemes/123>;
+            skos:topConceptOf <http://lblod.data.gift/concept-schemes/123>;
+            skos:prefLabel "I will be carrying out the works".
+    <http://lblod.data.gift/concept-schemes/456> a skos:Concept, ext:PermissionClassificatieCode;
+            mu:uuid "456";
+            skos:inScheme <http://lblod.data.gift/concept-schemes/123>;
+            skos:topConceptOf <http://lblod.data.gift/concept-schemes/123>;
+            skos:prefLabel "A company will be carrying out the works".
+    <http://lblod.data.gift/concept-schemes/789> a skos:Concept, ext:PermissionClassificatieCode;
+            mu:uuid "789";
+            skos:inScheme <http://lblod.data.gift/concept-schemes/123>;
+            skos:topConceptOf <http://lblod.data.gift/concept-schemes/123>;
+            skos:prefLabel "I will be carrying out the works for someone else".
